@@ -3,6 +3,10 @@
 # hapus dbo
 s/\[dbo\]\.//g
 
+# hapus command2 filegroup
+s/ON\ \[PRIMARY\]//g
+s/CLUSTERED//g
+
 # ganti kurung kotak
 s/\[/"/g
 s/\]/"/g
@@ -15,10 +19,6 @@ s/\"int\"\ IDENTITY([0-9, -]*)\ NOT\ NULL/serial/g
 
 # hapus GO
 s/GO//g
-
-# hapus command2 filegroup
-s/ON\ PRIMARY//g
-s/CLUSTERED//g
 
 # hapus SET
 /SET/d
