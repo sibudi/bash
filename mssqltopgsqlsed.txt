@@ -1,0 +1,28 @@
+# versi_1
+
+# hapus dbo
+s/\[dbo\]\.//g
+
+# ganti kurung kotak
+s/\[/"/g
+s/\]/"/g
+
+# ganti identity dengan sequence
+s/\"int\"\ IDENTITY([0-9, -]*)\ NOT\ NULL/serial/g
+
+# hapus use <database name>
+/USE/d
+
+# hapus GO
+s/GO//g
+
+# hapus command2 filegroup
+s/ON\ PRIMARY//g
+s/CLUSTERED//g
+
+# hapus SET
+/SET/d
+
+# ganti tipe data
+s/datetime/timestamp/g
+s/nvarchar/varchar/g
