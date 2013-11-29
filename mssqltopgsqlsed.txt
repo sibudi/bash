@@ -27,3 +27,4 @@ s/GO//g
 s/datetime/timestamp/g
 s/nvarchar/varchar/g
 s/decimal/numeric/g
+s/\"int\"/int/g
