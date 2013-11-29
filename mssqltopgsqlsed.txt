@@ -26,3 +26,4 @@ s/GO//g
 # ganti tipe data
 s/datetime/timestamp/g
 s/nvarchar/varchar/g
+s/decimal/numeric/g
