@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# Usage: ./mssqltopgsql.sh <mssql script name> > <pgsql script name>
+#
+# versi 2
+#
+
+# Usage: 
+# versi 1: ./mssqltopgsql.sh <mssql script name> > <pgsql script name>
+# versi 2: ./mssqltopgsql.sh
 
 for f in `ls *.sql`;
 do
