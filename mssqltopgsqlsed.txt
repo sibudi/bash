@@ -3,18 +3,18 @@
 # hapus dbo
 s/\[dbo\]\.//g
 
-# hapus command2 filegroup
-s/ON\ \[PRIMARY\]//g
-s/CLUSTERED//g
-
 # hapus kurung kotak
 s/\[//g
 s/\]//g
 
+# hapus command2 filegroup
+s/ON\ PRIMARY//g
+s/CLUSTERED//g
+
 # ganti identity dengan serial sequence
 s/int\ IDENTITY([0-9, -]*)/serial/g
 
-# hapus use <database name>
+# hapus use <database name> dan sebaris
 /USE/d
 
 # hapus GO
@@ -22,6 +22,15 @@ s/GO//g
 
 # hapus SET
 /SET/d
+
+# hapus CONSTRAINT
+s/CONSTRAINT.*PRIMARY\ KEY/PRIMARY\ KEY/g
+
+# hapus ASC
+s/ASC//g
+
+# hapus WITH...
+s/WITH.*//g
 
 # ganti tipe data
 s/datetime/timestamp/g
