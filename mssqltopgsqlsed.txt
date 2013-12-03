@@ -8,8 +8,10 @@ s/ON\ \[PRIMARY\]//g
 s/CLUSTERED//g
 
 # ganti kurung kotak
-s/\[/"/g
-s/\]/"/g
+#s/\[/"/g
+#s/\]/"/g
+#s/\(([^ )]*\)[ ]/\1_/
+s/\("[^ "]*\) \([^"]*"\)/\1_\2/g
 
 # ganti identity dengan sequence
 s/\"int\"\ IDENTITY([0-9, -]*)\ NOT\ NULL/serial/g
