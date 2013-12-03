@@ -1,4 +1,4 @@
-# versi_1
+# versi 2
 
 # hapus dbo
 s/\[dbo\]\.//g
@@ -7,14 +7,12 @@ s/\[dbo\]\.//g
 s/ON\ \[PRIMARY\]//g
 s/CLUSTERED//g
 
-# ganti kurung kotak
-#s/\[/"/g
-#s/\]/"/g
-#s/\(([^ )]*\)[ ]/\1_/
-s/\("[^ "]*\) \([^"]*"\)/\1_\2/g
+# hapus kurung kotak
+s/\[//g
+s/\]//g
 
-# ganti identity dengan sequence
-s/\"int\"\ IDENTITY([0-9, -]*)\ NOT\ NULL/serial/g
+# ganti identity dengan serial sequence
+s/int\ IDENTITY([0-9, -]*)/serial/g
 
 # hapus use <database name>
 /USE/d
@@ -29,4 +27,3 @@ s/GO//g
 s/datetime/timestamp/g
 s/nvarchar/varchar/g
 s/decimal/numeric/g
-s/\"int\"/int/g
