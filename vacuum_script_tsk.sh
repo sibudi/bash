@@ -60,3 +60,4 @@ echo " "
 echo "[INFO]: Reload config...."
 gpstop -u
 echo "Ended at `date`"
+
